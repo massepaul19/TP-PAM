@@ -8,8 +8,8 @@
 
 connect_user() {
     local username=$1
-    local start_connect="10:00:00"
-    local disconnect="22:00:00"
+    local start_connect="08:00:00"
+    local disconnect="18:00:00"
     local heure_actuelle=$(date +"%H:%M:%S")
 
     # Vérifie si l'utilisateur appartient au groupe "restreint"
@@ -49,7 +49,7 @@ creation_user() {
     local username=$1
     local password_default="inf361"
     local comment="Je suis"
-    local disk_quota="1G"
+    local disk_quota="2G"
     local expiration_date=$(date -d "+10 days" +%Y-%m-%d)
 
     # Crée l'utilisateur avec un commentaire
