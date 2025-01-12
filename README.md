@@ -1,6 +1,8 @@
 
-# Script de Création d'Utilisateur avec LVM et Quotas
-# MASSE MASSE Paul-Basthylle
+# MASSE MASSE PAUL-BASTHYLLE 22U2001
+
+
+# Script de Création d'Utilisateur avec LVM et Quotas puis connexion dans une plage donnée
 
 ## Introduction
 
