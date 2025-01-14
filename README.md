@@ -2,7 +2,9 @@
 # MASSE MASSE PAUL-BASTHYLLE 22U2001
 
 
-# Script de Création d'Utilisateur avec LVM et Quotas puis connexion dans une plage donnée
+# Script de Création d'Utilisateur sur un système linux , puis un  Quota pour cet user et après connexion de cet user uniquement dans une plage donnée
+
+# J'ai utilisé LVM pour que plusieurs utilisateurs puissent avoir un espace du disque parceque fdisk me contraint a formater le disk lorsque je veux créé un 2eme user.
 
 ## Introduction
 
@@ -17,6 +19,9 @@ Ce script permet de:
 - d'ajouter ce dernier à un groupe spécifique, et de lui  Le script crée également un répertoire de volume logique pour chaque utilisateur, offrant ainsi une gestion de l'espace disque de manière flexible et évolutive.
 
 En faite, le groupe spécifique permet d'ajouter directement les users ayant des restrictions afin que ce celà n'est pas un autre impact sur mes autres comptes
+
+
+########### Methode avec LVM Non prise en charge ici ##############
 
 ## Prérequis
 
@@ -33,6 +38,7 @@ Avant d'exécuter ce script, assurez-vous que votre système est configuré avec
 
 ### Prérequis matériels
 
+
 - Un disque dur ou une partition non utilisée pour créer un volume physique.
 - Un volume physique (PV) et un groupe de volumes (VG) doivent être configurés.
 commandes:
@@ -44,6 +50,8 @@ volume physique :
  - sudo pvcreate /dev/sda6     /*creation du nouveau volume */
  - sudo vgcreate users_vg /dev/sda6    /*creation du groupe de volume */
 
+
+########### Methode avec LVM Non prise en charge ici ##############
 
 ## Fonctionnement du Script
 
@@ -57,7 +65,7 @@ Le script fonctionne en plusieurs étapes :
    - Ajoute l'utilisateur au groupe `restreint`.
    - lui donne les droits sudo afin de changer le mdp
 
-2. **Gestion du disque avec LVM** :
+2. **Gestion du disque avec LVM (Non prise en charge dans le code), mais la fonction éxiste** :
 
    - Crée un volume logique (LV) pour l'utilisateur dans le groupe de volumes `users_vg`.
    - Formate le volume avec le système de fichiers `ext4`.
@@ -72,7 +80,7 @@ Le script fonctionne en plusieurs étapes :
 
 ### Connection user
 
-Permet de connecter un user s'il est dans entre 08h et 18h
+Permet de connecter un user s'il est dans la plage entre 08h et 18h
 
 
 ### Créer un utilisateur avec un espace disque limité et un mdp par defaut
