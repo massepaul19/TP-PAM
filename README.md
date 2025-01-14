@@ -4,7 +4,7 @@
 
 # Script de Création d'Utilisateur sur un système linux , puis un  Quota pour cet user et après connexion de cet user uniquement dans une plage donnée
 
-# J'ai utilisé LVM pour que plusieurs utilisateurs puissent avoir un espace du disque parceque fdisk me contraint a formater le disk lorsque je veux créé un 2eme user.
+## J'ai utilisé LVM pour que plusieurs utilisateurs puissent avoir un espace du disque parceque fdisk me contraint a formater le disk lorsque je veux créé un 2eme user.
 
 ## Introduction
 
@@ -21,7 +21,7 @@ Ce script permet de:
 En faite, le groupe spécifique permet d'ajouter directement les users ayant des restrictions afin que ce celà n'est pas un autre impact sur mes autres comptes
 
 
-########### Methode avec LVM Non prise en charge ici ##############
+########### Methode avec LVM prise en charge ici ##############
 
 ## Prérequis
 
